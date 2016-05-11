@@ -2,9 +2,7 @@
     class View {
         private $controller;
 
-        function __construct (Request $petition) {
-            $this->controller = $petition->getController ();
-        }
+        function __construct (Request $petition) {$this->controller = $petition->getController ();}
 
         public function show ($name, $variables = array ()) {
             require 'libs/smarty/libs/Smarty.class.php';
@@ -41,6 +39,11 @@
             $smarty->assign (
                 'bootstrapValidatorJs', 
                 'http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js'
+            );
+
+            $smarty->assign (
+                'bootstrapDropdown',
+                'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/dropdown.js'
             );
 
             foreach ($variables as $key => $value) {

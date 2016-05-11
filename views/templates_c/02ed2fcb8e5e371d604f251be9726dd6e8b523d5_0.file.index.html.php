@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-04-20 23:42:55
+/* Smarty version 3.1.30-dev/59, created on 2016-05-08 04:51:51
   from "/opt/lampp/htdocs/virtual_classroom/views/Course/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_5717f7dfd03710_15827693',
+  'unifunc' => 'content_572ea9c7d6c9b6_43232003',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '02ed2fcb8e5e371d604f251be9726dd6e8b523d5' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/Course/index.html',
-      1 => 1461188436,
+      1 => 1462675907,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5717f7dfd03710_15827693 (Smarty_Internal_Template $_smarty_tpl) {
+function content_572ea9c7d6c9b6_43232003 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -56,23 +56,39 @@ function content_5717f7dfd03710_15827693 (Smarty_Internal_Template $_smarty_tpl)
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>
-											 Inicio
+											Inicio
 										</a>
-								</li>								
+								</li>
+
 								<li>
-										<a href = "Course">Cursos</a>
+										<a href = "Course">
+											<span class = "glyphicon glyphicon-book"></span>
+											Cursos
+										</a>
 								</li>
 								<li>
-										<a href = "#">Perfil</a>
+										<a href = "User?go=profile">
+											<span class = "glyphicon glyphicon-education"></span>
+											Perfil
+										</a>
 								</li>
-								<li>
+								<li>										
+										<a href = "User/control">
+											<span class = "glyphicon glyphicon-user"></span>
+											Control de usuarios
+										</a>
+								</li>
+								<li>										
 										<a href = "#">
 											<span class = "glyphicon glyphicon-cog"></span>
 											Configuración
 										</a>
 								</li>
 								<li>
-										<a id = "closeAccount" href = "#">Salir</a>
+										<a id = "closeAccount" href = "#">
+											<span class = "glyphicon glyphicon-log-out"></span>
+											Salir
+										</a>
 								</li>
 						</ul>
 			</nav>

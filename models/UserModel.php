@@ -1,10 +1,8 @@
 <?php
     class UserModel {
         protected $database;
-
-        public function __construct () {
-            $this->database = SPDO::singleton ();
-        }
+        
+        public function __construct () {$this->database = SPDO::singleton ();}
 
         public function create ($identificationNumber, $name, $lastName, $email, $password, $type = 0, $image = null, $active = 0, $activeCode) {
             require 'libs/Bcrypt.php';
@@ -38,56 +36,30 @@
 
         public function readSpecific ($symbol, $identificationNumber = null, $name = null, $lastName = null, $email = null, $password = null,
         $type = null, $active = null, $activeCode = null) {
-            $sql = 'select identification_number, name, last_name, email, password, type, image, active, active_code from user where 1 = 1';
+            $sql = 'select * from user where 1 = 1';
             $count = 0;
 
-            if (isset ($identificationNumber)) {
-                $sql = $sql.' and identification_number = ?';
-            }
+            if (isset ($identificationNumber)) $sql = $sql.' and identification_number = ?';
 
             if (isset ($name)) {
-                if ($symbol == '%') {
-                    $sql = $sql.' and name like "%'.$name.'%"';
-                }
-                else {
-                    $sql = $sql.' and name = "'.$name.'"';
-                }
+                if ($symbol == '%') $sql = $sql.' and name like "%'.$name.'%"';
+                else $sql = $sql.' and name = "'.$name.'"';
             }
 
             if (isset ($lastName)) {
-                if ($symbol == '%') {
-                    $sql = $sql.' and last_name like "%'.$lastName.'%"';
-                }
-                else {
-                    $sql = $sql.' and last_name = "'.$lastName.'"';
-                }
+                if ($symbol == '%') $sql = $sql.' and last_name like "%'.$lastName.'%"';
+                else $sql = $sql.' and last_name = "'.$lastName.'"';
             }
 
             if (isset ($email)) {
-                if ($symbol == '%') {
-                    $sql = $sql.' and email like "%'.$email.'%"';
-                }
-                else {
-                    $sql = $sql.' and email = "'.$email.'"';
-                }
+                if ($symbol == '%') $sql = $sql.' and email like "%'.$email.'%"';
+                else $sql = $sql.' and email = "'.$email.'"';
             }
 
-            if (isset ($password)) {
-                $sql = $sql.' and password = ?';
-            }
-
-            if (isset ($type)) {
-                $sql = $sql.' and type = ?';
-            }
-
-            if (isset ($active)) {
-                $sql = $sql.' and active = ?';
-            }
-
-            if (isset ($activeCode)) {
-                $sql = $sql.' and active_code = ?';
-            }
-
+            if (isset ($password)) $sql = $sql.' and password = ?';
+            if (isset ($type)) $sql = $sql.' and type = ?';
+            if (isset ($active)) $sql = $sql.' and active = ?';        
+            if (isset ($activeCode)) $sql = $sql.' and active_code = ?';
             $query = $this->database->prepare ($sql);
 
             if (isset ($identificationNumber)) {

@@ -3,17 +3,23 @@
 		<head>
 				<title>{$title}</title>
 				<meta charset = "utf-8"/>
-				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>
-				<link rel = "stylesheet" href = "{$bootstrapCss}"/>
-				<link rel = "stylesheet" href = "views/Index/css/main.css"/>				
+				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>								
+				<link rel = "stylesheet" href = "{$bootstrapCss}"/>			
+				<link rel = "stylesheet" href = "views/Index/css/main.css"/>
 		</head>
 		<body class = "landing">
 				<header id = "header" class = "alt">
-						<h1><a href = "#"><img class = "gravatar"/></a></h1>
+						<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>
 						<a href = "#nav">Menú</a>
 				</header>
 				<nav id = "nav">
 						<ul class = "links">
+								<li>									
+									<a href="#">
+										<span class = "glyphicon glyphicon-info-sign"></span>
+										Notificaciones <span class="badge">42</span>
+									</a>
+								</li>
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>
@@ -22,10 +28,22 @@
 								</li>
 
 								<li>
-										<a href = "Course">Cursos</a>
+										<a href = "Course">
+											<span class = "glyphicon glyphicon-book"></span>
+											Cursos
+										</a>
 								</li>
 								<li>
-										<a href = "User">Perfil</a>
+										<a href = "User?go=profile">
+											<span class = "glyphicon glyphicon-education"></span>
+											Perfil
+										</a>
+								</li>
+								<li>										
+										<a href = "User/control">
+											<span class = "glyphicon glyphicon-user"></span>
+											Control de usuarios
+										</a>
 								</li>
 								<li>										
 										<a href = "#">
@@ -34,7 +52,10 @@
 										</a>
 								</li>
 								<li>
-										<a id = "closeAccount" href = "#">Salir</a>
+										<a id = "closeAccount" href = "#">
+											<span class = "glyphicon glyphicon-log-out"></span>
+											Salir
+										</a>
 								</li>
 						</ul>
 				</nav>
@@ -62,7 +83,7 @@
 						<div class = "inner">
 							<header class = "major narrow">
 									<h2>Cursos</h2>
-									<p>Estos son nuestros ? cursos mejores calificados</p>
+									<p>Estos son nuestros 4 cursos mejor calificados</p>
 							</header>
 						
 

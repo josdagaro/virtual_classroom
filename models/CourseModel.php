@@ -2,9 +2,7 @@
 	class CourseModel {
 		protected $database;
 
-		public function __construct () {
-			$this->database = SPDO::singleton ();
-		}
+		public function __construct () {$this->database = SPDO::singleton ();}
 
 		public function create ($name, $description, $creationDate, $image) {
             $query = $this->database->prepare (
@@ -27,33 +25,19 @@
         public function readSpecific ($symbol, $identifier = null, $name = null, $description = null, $creationDate = null) {
             $sql = 'select * from course where 1 = 1';
             $count = 0;
-
-            if (isset ($identifier)) {
-                $sql = $sql.' and identifier = ?';
-            }
+            if (isset ($identifier)) $sql = $sql.' and identifier = ?';
 
             if (isset ($name)) {
-                if ($symbol == '%') {
-                    $sql = $sql.' and name like "%'.$name.'%"';
-                }
-                else {
-                    $sql = $sql.' and name = "'.$name.'"';
-                }
+                if ($symbol == '%') $sql = $sql.' and name like "%'.$name.'%"';
+                else $sql = $sql.' and name = "'.$name.'"';
             }
 
             if (isset ($description)) {
-                if ($symbol == '%') {
-                    $sql = $sql.' and description like "%'.$description.'%"';
-                }
-                else {
-                    $sql = $sql.' and description = "'.$description.'"';
-                }
+                if ($symbol == '%') $sql = $sql.' and description like "%'.$description.'%"';
+                else $sql = $sql.' and description = "'.$description.'"';
             }
 
-            if (isset ($creationDate)) {
-                $sql = $sql.' and creation_date = ?';
-            }
-
+            if (isset ($creationDate)) $sql = $sql.' and creation_date = ?';
             $query = $this->database->prepare ($sql);
 
             if (isset ($identifier)) {

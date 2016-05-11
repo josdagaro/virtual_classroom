@@ -17,12 +17,7 @@
         public function hash ($input)
         {
             $hash = crypt ($input, $this->getSalt ());
-
-            if (strlen ($hash) > 13)
-            {
-                return $hash;
-            }
-
+            if (strlen ($hash) > 13) return $hash;
             return false;
         }
 
@@ -62,25 +57,14 @@
                 if ($this->randomState === null)
                 {
                     $this->randomState = microtime ();
-
-                    if (function_exists ('getmypid'))
-                    {
-                        $this->randomState .= getmypid ();
-                    }
+                    if (function_exists ('getmypid')) $this->randomState .= getmypid ();
                 }
 
                 for ($i = 0; $i < $count; $i += 16)
                 {
                     $this->randomState = md5 (microtime () . $this->randomState);
-
-                    if (PHP_VERSION >= '5')
-                    {
-                        $bytes .= md5 ($this->randomState, true);
-                    }
-                    else
-                    {
-                        $bytes .= pack ('H*', md5 ($this->randomState));
-                    }
+                    if (PHP_VERSION >= '5') $bytes .= md5 ($this->randomState, true);
+                    else $bytes .= pack ('H*', md5 ($this->randomState));
                 }
 
                 $bytes = substr ($bytes, 0, $count);

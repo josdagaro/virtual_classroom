@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-04-20 17:19:14
+/* Smarty version 3.1.30-dev/59, created on 2016-05-08 05:07:52
   from "/opt/lampp/htdocs/virtual_classroom/views/User/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_57179df2d1c7e8_27073562',
+  'unifunc' => 'content_572ead8809ad66_32360638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a660ee54b8081d6fe77a504e6ef27e978aa89e2d' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/User/index.html',
-      1 => 1461129708,
+      1 => 1462676835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57179df2d1c7e8_27073562 (Smarty_Internal_Template $_smarty_tpl) {
+function content_572ead8809ad66_32360638 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -28,11 +28,11 @@ function content_57179df2d1c7e8_27073562 (Smarty_Internal_Template $_smarty_tpl)
 				<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
 				<meta charset = "utf-8"/>
-				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>
+				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>				
 				<link rel = "stylesheet" href = "<?php echo $_smarty_tpl->tpl_vars['bootstrapCss']->value;?>
 "/>
 				<link rel = "stylesheet" href = "<?php echo $_smarty_tpl->tpl_vars['bootstrapValidatorCss']->value;?>
-"/>
+"/>				
 				<link rel = "stylesheet" href = "views/User/css/main.css"/>
 		</head>
 		<body class = "landing">
@@ -41,23 +41,42 @@ function content_57179df2d1c7e8_27073562 (Smarty_Internal_Template $_smarty_tpl)
 				</header>
 				<nav id = "nav">
 						<ul class = "links">
-								<li>									
+								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>
 											Inicio
 										</a>
 								</li>
+
 								<li>
-										<a href = "Course">Cursos</a>
+										<a href = "Course">
+											<span class = "glyphicon glyphicon-book"></span>
+											Cursos
+										</a>
 								</li>
 								<li>
-										<a href = "#">Perfil</a>
+										<a href = "User?go=profile">
+											<span class = "glyphicon glyphicon-education"></span>
+											Perfil
+										</a>
+								</li>
+								<li>										
+										<a href = "User/control">
+											<span class = "glyphicon glyphicon-user"></span>
+											Control de usuarios
+										</a>
+								</li>
+								<li>										
+										<a href = "#">
+											<span class = "glyphicon glyphicon-cog"></span>
+											Configuración
+										</a>
 								</li>
 								<li>
-										<a href = "#">Configuración</a>
-								</li>
-								<li>
-										<a id = "closeAccount" href = "#">Salir</a>
+										<a id = "closeAccount" href = "#">
+											<span class = "glyphicon glyphicon-log-out"></span>
+											Salir
+										</a>
 								</li>
 						</ul>
 				</nav>

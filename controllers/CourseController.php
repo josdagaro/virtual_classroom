@@ -2,9 +2,7 @@
     require 'libs/Controller.php';
 
     class CourseController extends Controller {
-        public function __construct () {
-            parent::__construct ();
-        }
+        public function __construct () {parent::__construct ();}
         
         public function index () {     
             require 'models/CourseModel.php'; 
@@ -33,15 +31,7 @@
             
                 $this->view->show ('index', $variables);
             }
-            else header ("Location: User");
-        }        
-
-        public function update () {
-       
-        }
-
-        public function add () {
-                      
+            else header ('Location: User?go=index');
         }
 
         public function addOrUpdate () {
@@ -108,9 +98,7 @@
                 $result = $course->readSpecific ('=', null, $name, null, null);
                 $array = null;            
 
-                foreach ($result as $key => $value) {
-                    $array = $value;
-                }
+                foreach ($result as $key => $value) $array = $value;
 
                 if ($array == null && $name != null && $description != null) {                
                     $thumb = new GD ($path);
@@ -142,17 +130,5 @@
             header ('Content-type: application/json; charset=utf-8');
             echo json_encode ($jsonData);
         }
-        /*
-        public function Crud(){
-            $alm = new curso();
-            
-            if(isset($_REQUEST['id'])){
-                $alm = $this->model->Obtener($_REQUEST['id']);
-            }
-            
-            require_once 'views/header.php';
-            require_once 'views/curso/curso-editar.php';
-            require_once 'views/footer.php';
-        }      */
     }
 ?>

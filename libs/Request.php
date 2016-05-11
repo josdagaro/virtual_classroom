@@ -17,35 +17,13 @@
                 $this->arguments = $url;
             }
 
-            if (!$this->controller)
-            {
-                $this->controller = 'Index';
-            }
-
-            if (!$this->action)
-            {
-                $this->action = 'index';
-            }
-
-            if (!isset ($this->arguments))
-            {
-                $this->arguments = array ();
-            }
+            if (!$this->controller) $this->controller = 'Index';
+            if (!$this->action) $this->action = 'index';
+            if (!isset ($this->arguments)) $this->arguments = array ();
         }
 
-        public function getController ()
-        {
-            return $this->controller;
-        }
-
-        public function getAction ()
-        {
-            return $this->action;
-        }
-
-        public function getArguments ()
-        {
-            return $this->arguments;
-        }
+        public function getController () {return $this->controller;}
+        public function getAction () {return $this->action;}
+        public function getArguments () {return $this->arguments;}
     }
 ?>

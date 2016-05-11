@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-04-21 00:39:52
+/* Smarty version 3.1.30-dev/59, created on 2016-05-11 08:02:21
   from "/opt/lampp/htdocs/virtual_classroom/views/Index/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_571805382524d8_53529845',
+  'unifunc' => 'content_5732caede18d37_25776365',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dcfbb52bfe680069ba9f7d2d836d94cae8d33138' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/Index/index.html',
-      1 => 1461191988,
+      1 => 1462946490,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_571805382524d8_53529845 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5732caede18d37_25776365 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -28,18 +28,24 @@ function content_571805382524d8_53529845 (Smarty_Internal_Template $_smarty_tpl)
 				<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
 				<meta charset = "utf-8"/>
-				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>
+				<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>								
 				<link rel = "stylesheet" href = "<?php echo $_smarty_tpl->tpl_vars['bootstrapCss']->value;?>
-"/>
-				<link rel = "stylesheet" href = "views/Index/css/main.css"/>				
+"/>			
+				<link rel = "stylesheet" href = "views/Index/css/main.css"/>
 		</head>
 		<body class = "landing">
 				<header id = "header" class = "alt">
-						<h1><a href = "#"><img class = "gravatar"/></a></h1>
+						<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>
 						<a href = "#nav">Menú</a>
 				</header>
 				<nav id = "nav">
 						<ul class = "links">
+								<li>									
+									<a href="#">
+										<span class = "glyphicon glyphicon-info-sign"></span>
+										Notificaciones <span class="badge">42</span>
+									</a>
+								</li>
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>
@@ -48,10 +54,22 @@ function content_571805382524d8_53529845 (Smarty_Internal_Template $_smarty_tpl)
 								</li>
 
 								<li>
-										<a href = "Course">Cursos</a>
+										<a href = "Course">
+											<span class = "glyphicon glyphicon-book"></span>
+											Cursos
+										</a>
 								</li>
 								<li>
-										<a href = "User">Perfil</a>
+										<a href = "User?go=profile">
+											<span class = "glyphicon glyphicon-education"></span>
+											Perfil
+										</a>
+								</li>
+								<li>										
+										<a href = "User/control">
+											<span class = "glyphicon glyphicon-user"></span>
+											Control de usuarios
+										</a>
 								</li>
 								<li>										
 										<a href = "#">
@@ -60,7 +78,10 @@ function content_571805382524d8_53529845 (Smarty_Internal_Template $_smarty_tpl)
 										</a>
 								</li>
 								<li>
-										<a id = "closeAccount" href = "#">Salir</a>
+										<a id = "closeAccount" href = "#">
+											<span class = "glyphicon glyphicon-log-out"></span>
+											Salir
+										</a>
 								</li>
 						</ul>
 				</nav>
@@ -91,7 +112,7 @@ function content_571805382524d8_53529845 (Smarty_Internal_Template $_smarty_tpl)
 						<div class = "inner">
 							<header class = "major narrow">
 									<h2>Cursos</h2>
-									<p>Estos son nuestros ? cursos mejores calificados</p>
+									<p>Estos son nuestros 4 cursos mejor calificados</p>
 							</header>
 						
 

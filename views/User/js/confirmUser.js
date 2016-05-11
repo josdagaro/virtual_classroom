@@ -4,5 +4,5 @@ $(document).ready (function (event) {
 });
 
 var reroute = function () {
-    window.location.href = "http://159.203.112.148:8080";
+    window.location.href = "http://localhost/virtual_classroom/";
 }
