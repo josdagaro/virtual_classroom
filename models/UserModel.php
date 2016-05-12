@@ -34,11 +34,11 @@
             return $query->fetchAll ();
         }
 
-        public function readSpecific ($symbol, $identificationNumber = null, $name = null, $lastName = null, $email = null, $password = null,
+        public function readSpecific ($symbol, $id = null, $identificationNumber = null, $name = null, $lastName = null, $email = null, $password = null,
         $type = null, $active = null, $activeCode = null) {
             $sql = 'select * from user where 1 = 1';
             $count = 0;
-
+            if (isset ($id)) $sql = $sql.' and identifier = ?';
             if (isset ($identificationNumber)) $sql = $sql.' and identification_number = ?';
 
             if (isset ($name)) {
@@ -61,6 +61,11 @@
             if (isset ($active)) $sql = $sql.' and active = ?';        
             if (isset ($activeCode)) $sql = $sql.' and active_code = ?';
             $query = $this->database->prepare ($sql);
+
+            if (isset ($id)) {
+                $count ++;
+                $query->bindParam ($count, $id);
+            }
 
             if (isset ($identificationNumber)) {
                 $count ++;

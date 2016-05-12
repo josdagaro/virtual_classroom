@@ -17,11 +17,12 @@
             return $query->fetchAll ();
 		}
 
-        public function readSpecific ($userId, $requestId) {
-            $sql = 'select * from receives where user_id = '.$userId.' and request_id = '.$requestId;
+        public function readSpecific ($userId, $requestId = null) {
+            $sql = 'select * from receives where user_id = ?';
+            if (isset ($requestId)) $sql = $sql.' and request_id = ?';
             $query = $this->database->prepare ($sql);
             $query->bindParam (1, $userId);
-            $query->bindParam (2, $requestId);
+            if (isset ($requestId)) $query->bindParam (2, $requestId);
             $query->execute ();
             return $query->fetchAll ();
         }

@@ -1,6 +1,6 @@
 $(document).ready (function (event) {
-    setTimeout (reroute, 5000);
-    event.preventDefault ();
+    setTimeout (reroute, 5000);	    
+    event.preventDefault ();    
 });
 
 var reroute = function () {

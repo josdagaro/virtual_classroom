@@ -5,9 +5,7 @@ $(document).ready (function () {
 				message: "Por favor, escribe el nombre del curso. ",
 
                 validators: {                	
-                    notEmpty: {
-                    	message: "Por favor, escribe el nombre del curso. "
-                    },
+                    notEmpty: {message: "Por favor, escribe el nombre del curso. "},
 
                     stringLength: {
                         min: 8,
@@ -26,9 +24,7 @@ $(document).ready (function () {
                 message: "Descripción requerida. ",
 
                 validators: {
-                    notEmpty: {
-                        message: "Por favor, escribe una breve descripción del curso. "
-                    },
+                    notEmpty: {message: "Por favor, escribe una breve descripción del curso. "},
 
                     stringLength: {
                         min: 10,

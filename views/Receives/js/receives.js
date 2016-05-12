@@ -9,14 +9,8 @@ $(window).load (function (event) {
             node = null;
 
             if (data != null) {
-            	$(".gravatar").attr("src", data.image);
-            	$("#user-name").text (data.name + " " + data.lastName);
-            	if (data.type == 0) $("#current-role").text ("Rol actual: Administrador");
-            	else if (data.type == 1) $("#current-role").text ("Rol actual: Docente");
-            	else if (data.type == 2) $("#current-role").text ("Rol actual: Estudiante");
-                $("#user-email").text ("Correo electrónico: " + data.email);
-                $("#user-id").text ("Número de identificación: " + data.identificationNumber);
-                notificationsQuantity ();
+            	$(".gravatar").attr("src", data.image);  
+                notificationsQuantity ();          	
                 setInterval (notificationsQuantity, 1000);
             }
             else {
@@ -59,31 +53,34 @@ $(window).load (function (event) {
         });
     });
 
-    $("#btn-sel").click (function () {
-        var dataset = {"selected-role": $("#rol-sel").val (), "type": 0};
+    $("#req-container").click (function (event) {
+        if (event.target.nodeName == "BUTTON") {
+            var code = event.target.id, option = code.charAt (0), size = code.length,
+                identifier = "", dataset = null;
+            for (var i = 1; i < size; i ++) identifier = identifier.concat (code.charAt (i));
+            if (option == "a") option = 1;
+            else option = 0;
+            dataset = {id: identifier, action: option};
+            
+            $.ajax ({
+                type: "post", url: "Request/attend", data: dataset, encode: true,
+                
+                success: function (data) {
+                    console.log ("Package sent");
+                    console.log (data);
+                    var message = "";
+                    if (data != null) message = "Haz " + data.message + " la solicitud";
+                    else message = "La solicitud señalada no es válida o no existe";
+                    alert (message);
+                    window.location.href = "Receives";
+                },
 
-        $.ajax ({
-            type: "post", url: "Request/send", data: dataset, encode: true,
-
-            success: function (data) {
-                console.log ("Package sent");
-                console.log (data);
-                $("#user-rol") [0].reset ();
-                var message = "";
-
-                if (data != null) {
-                    if (data.create) message = "Solicitud enviada";
-                    else message = "Ya existe una petición";
+                error: function (data) {
+                    console.log ("Package unsent");
+                    console.log (data);                                      
                 }
-                else message = "Ocurrió un error al generar la solicitud";  
-                alert (message);   
-            },
-
-            error: function (data) {
-                console.log ("Package unsent");
-                console.log (data);
-            }
-        });
+            });
+        }
     });
 
 	event.preventDefault ();	
@@ -98,10 +95,10 @@ function notificationsQuantity () {
             console.log (data);*/
             var message = "";
 
-            if (data != null) $(".badge").text (data.notificationsQuantity);                
+            if (data != null) $(".badge").text (data.notificationsQuantity);
             else {
                 message = "La sesión fue cerrada";    
-                console.log (message);
+                alert (message);
                 window.location.href = "User";            
             }
         },

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-05-08 05:07:52
+/* Smarty version 3.1.30-dev/59, created on 2016-05-11 23:53:59
   from "/opt/lampp/htdocs/virtual_classroom/views/User/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_572ead8809ad66_32360638',
+  'unifunc' => 'content_5733a9f7ac4e72_74429641',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a660ee54b8081d6fe77a504e6ef27e978aa89e2d' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/User/index.html',
-      1 => 1462676835,
+      1 => 1462950354,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_572ead8809ad66_32360638 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5733a9f7ac4e72_74429641 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -41,6 +41,12 @@ function content_572ead8809ad66_32360638 (Smarty_Internal_Template $_smarty_tpl)
 				</header>
 				<nav id = "nav">
 						<ul class = "links">
+								<li>									
+									<a href="#">
+										<span class = "glyphicon glyphicon-info-sign"></span>
+										Notificaciones <span class="badge"></span>
+									</a>
+								</li>
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>

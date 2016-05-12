@@ -164,6 +164,8 @@ $(window).load (function (event) {
 
             if (data != null) {
             	$(".gravatar").attr("src", data.image);
+            	notificationsQuantity ();
+            	setInterval (notificationsQuantity, 1000);
             }
             else {
             	message = "Ese necesario iniciar sesión";
@@ -210,3 +212,27 @@ $(window).load (function (event) {
 
 	event.preventDefault ();
 });
+
+function notificationsQuantity () {
+    $.ajax ({
+        type: "post", url: "User/requestsNumber", data: null, encode: true,
+
+        success: function (data) {
+            /*console.log ("Package sent");
+            console.log (data);*/
+            var message = "";
+
+            if (data != null) $(".badge").text (data.notificationsQuantity);
+            else {
+                message = "La sesión fue cerrada";    
+                alert (message);
+                window.location.href = "User";            
+            }
+        },
+
+        error: function (data) {
+            console.log ("Package unsent");
+            console.log (data);
+        }
+    });
+}

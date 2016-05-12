@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-05-11 08:02:21
+/* Smarty version 3.1.30-dev/59, created on 2016-05-12 00:17:20
   from "/opt/lampp/htdocs/virtual_classroom/views/Index/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_5732caede18d37_25776365',
+  'unifunc' => 'content_5733af70c86968_52158349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dcfbb52bfe680069ba9f7d2d836d94cae8d33138' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/Index/index.html',
-      1 => 1462946490,
+      1 => 1463005022,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5732caede18d37_25776365 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5733af70c86968_52158349 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -36,16 +36,11 @@ function content_5732caede18d37_25776365 (Smarty_Internal_Template $_smarty_tpl)
 		<body class = "landing">
 				<header id = "header" class = "alt">
 						<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>
+						<a href="Receives">Notificaciones <span class="badge"></span></a>
 						<a href = "#nav">Menú</a>
 				</header>
 				<nav id = "nav">
 						<ul class = "links">
-								<li>									
-									<a href="#">
-										<span class = "glyphicon glyphicon-info-sign"></span>
-										Notificaciones <span class="badge">42</span>
-									</a>
-								</li>
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>

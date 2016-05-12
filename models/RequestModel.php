@@ -65,7 +65,7 @@
 
         public function update ($id, $userId, $state, $type, $body) {
             $query = $this->database->prepare ('update request set user_id = ?, state = ?, type = ?, body = ? where id = ?');
-            $query->bindParam (1, $user_id);
+            $query->bindParam (1, $userId);
             $query->bindParam (2, $state);
             $query->bindParam (3, $type);
             $query->bindParam (4, $body);

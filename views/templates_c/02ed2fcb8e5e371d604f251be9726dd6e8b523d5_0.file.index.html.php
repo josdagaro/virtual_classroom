@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-05-08 04:51:51
+/* Smarty version 3.1.30-dev/59, created on 2016-05-12 00:17:26
   from "/opt/lampp/htdocs/virtual_classroom/views/Course/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_572ea9c7d6c9b6_43232003',
+  'unifunc' => 'content_5733af764daef0_36289104',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '02ed2fcb8e5e371d604f251be9726dd6e8b523d5' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/Course/index.html',
-      1 => 1462675907,
+      1 => 1463005035,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_572ea9c7d6c9b6_43232003 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5733af764daef0_36289104 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -46,7 +46,8 @@ function content_572ea9c7d6c9b6_43232003 (Smarty_Internal_Template $_smarty_tpl)
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href = "#"><img class = "gravatar"/></a></h1>
+				<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>
+				<a href="Receives">Notificaciones <span class="badge"></span></a>
 				<a href="#nav">Menú</a>
 			</header>
 

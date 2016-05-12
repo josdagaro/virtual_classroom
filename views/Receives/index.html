@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Retrospect by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
 		<title>{$title}</title>
@@ -17,7 +12,7 @@
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
 				<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>	
-				<a href="Receives">Notificaciones <span class="badge"></span></a>							
+				<a href="Receives">Notificaciones <span class="badge"></span></a>
 				<a href="#nav">Menú</a>
 			</header>
 
@@ -68,51 +63,69 @@
 			<section id="main" class="wrapper">
 				<div class="container">
 					<header class="major special">
-						<h2 id = "user-name">{$title}</h2>
-						<p><span class = "glyphicon glyphicon-user"></span> Perfil de usuario</p>
+						<h2>{$title}</h2>
+						<p><span class = "glyphicon glyphicon-info-sign"></span> Solicitudes pendientes</p>
 					</header>					
         </div>
         </section>
 
 <!--=============================================================================================================-->		
-        <div class = "container">
-        	<div class="panel panel-default">
-        		<div class="panel-heading">
-					<h3 class="panel-title">Información de la cuenta</h3>
-				</div>
-				<div class="panel-body">
-					<div class = "row">
-						<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<label id = "user-email" class = "label label-primary"></label>
-						</div>
-						<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<label id = "user-id" class = "label label-default"></label>
-						</div>
+        <div class = "container" id = "req-container">
+        	{if $requests eq null}
+	        	<div class = "panel panel-success" id = "no-ntf">
+	        		<div class = "panel-heading">
+	        			<h2>No hay solicitudes</h2>
+	        		</div>	        	
+	        		<div class = "panel-body">
+	        			Cuando haya una nueva solicitud, se hará notorio en la barra de navegación
+	        		</div>
+	        	</div>
+        	{/if}
+
+        	{foreach from = $requests key = requestId item = values}
+	        	<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							{if $values.type eq 0}
+								Solicitud de rol
+							{/if}
+						</h3>
 					</div>
-				</div>
-        	</div>
-        	<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Solicitud de rol</h3>
-				</div>
-				<div class="panel-body">
-					<form id = "user-rol">
-						<div class="form-group">
-							<label class = "label label-success" id = "current-role">						
-							</label>
-						  	<label for="rol-sel">Roles disponibles:</label>
-						  	<select class="form-control" id="rol-sel" name = "selected-role">
-						    	<option value = "2" selected>Estudiante</option>
-						    	<option value = "1">Docente</option>
-						    	<option value = "0">Administrador</option>
-						  	</select>
-						</div>
-						<div class = "form-group">
-							<button id = "btn-sel" type = "button" class="btn btn-info">Solicitar</button>
-						</div>						
-					</form>
-				</div>
-			</div>        
+					<div class="panel-body">
+						<form role = "form">
+							<div class = "form-group">
+								<label>Nombres del emisor: {$values.user.name} {$values.user.last_name}</label>
+								<label>Correo electrónico: {$values.user.email}</label>
+								<label>
+									Rol actual:
+									{if $values.user.type eq 0}
+										<span class = "label label-success">Administrador</span>
+									{elseif $values.user.type eq 1}
+										<span class = "label label-success">Docente</span>
+									{elseif $values.user.type eq 2}
+										<span class = "label label-success">Estudiante</span>
+									{else}
+										<span class = "label label-default">Desconocido</span>
+									{/if} | 
+									{if $values.body eq "teacher"}
+										Petición de ascenso a <span class = "label label-success">docente</span>
+									{elseif $values.body eq "admin"}
+										Petición de ascenso a <span class = "label label-success">administrador</span>
+									{elseif $values.body eq "student"}
+										Petición de ascenso a <span class = "label label-success">estudiante</span>
+									{else}
+										Petición de ascenso <span class = "label label-default">desconocido</span>
+									{/if}
+								</label>
+							</div>
+							<div class = "form-group">
+								<button id = "a{$values.id}" class = "btn btn-default" type = "button">Aceptar</button>
+								<button id = "c{$values.id}" class = "btn btn-default" type = "button">Ignorar</button>
+							</div>
+						</form>
+					</div>
+				</div> 
+			{/foreach}
 		</div>
  <!--=============================================================================================================-->
 
@@ -139,14 +152,11 @@
           </ul>
 				</div>
 			</footer>
-
-		<!-- Scripts -->
       	<script src = "{$jquery}"></script>
 		<script src = "views/Course/js/skel.min.js"></script>
 		<script src = "views/Course/js/util.js"></script>
 		<script src = "views/Course/js/main.js"></script>
-		<!--<script src = "{$bootstrapDropdown}"></script>-->
 		<script src = "{$bootstrapJs}"></script>
-		<script src = "{$profileJs}"></script>		
+		<script src = "{$receivesJs}"></script>		
 	</body>
 </html>

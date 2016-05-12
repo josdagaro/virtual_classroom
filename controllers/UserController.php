@@ -83,7 +83,7 @@
 
             if (isset ($email) && isset ($password)) {
                 $user = new UserModel ();
-                $result = $user->readSpecific ('=', null, null, null, $email);
+                $result = $user->readSpecific ('=', null, null, null, null, $email);
 
                 foreach ($result as $key => $value) {
                     $array = array (
@@ -133,7 +133,7 @@
             if (isset ($identifier) && isset ($name) && isset ($lastName) && isset ($email) && isset ($password) && isset ($verifyPassword) &&
             $password == $verifyPassword) {
                 $user = new UserModel ();
-                $result = $user->readSpecific ('=', $identifier);
+                $result = $user->readSpecific ('=', null, $identifier);
                 foreach ($result as $key => $value) $array = array ('identificationNumber' => $value ['identification_number']);
 
                 if (!(isset ($array ['identificationNumber']) && $array ['identificationNumber'] == $identifier)) {
@@ -196,7 +196,7 @@
             if ($_GET ['activeCode'] != null) {
                 $activeCode = $_GET ['activeCode'];
                 $user = new UserModel ();
-                $result = $user->readSpecific ('=', null, null, null, null, null, null, null, $activeCode);
+                $result = $user->readSpecific ('=', null, null, null, null, null, null, null, null, $activeCode);
 
                 foreach ($result as $key => $value) {
                     $array = array (

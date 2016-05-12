@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/59, created on 2016-05-11 08:02:14
+/* Smarty version 3.1.30-dev/59, created on 2016-05-11 23:58:40
   from "/opt/lampp/htdocs/virtual_classroom/views/User/profile.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/59',
-  'unifunc' => 'content_5732cae6b60c89_32885144',
+  'unifunc' => 'content_5733ab10134f13_19898449',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30eb68a5ee3f4883308315f2360ab7f6020fd543' => 
     array (
       0 => '/opt/lampp/htdocs/virtual_classroom/views/User/profile.html',
-      1 => 1462945543,
+      1 => 1463003316,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5732cae6b60c89_32885144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5733ab10134f13_19898449 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -42,19 +42,14 @@ function content_5732cae6b60c89_32885144 (Smarty_Internal_Template $_smarty_tpl)
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href = "#"><img class = "gravatar"/></a></h1>								
+				<h1><a href = "User?go=profile"><img class = "gravatar"/></a></h1>	
+				<a href="Receives">Notificaciones <span class="badge"></span></a>							
 				<a href="#nav">Menú</a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class = "links">
-								<li>									
-									<a href="#">
-										<span class = "glyphicon glyphicon-info-sign"></span>
-										Notificaciones <span class="badge">42</span>
-									</a>
-								</li>
 								<li>										
 										<a href = "Index">
 											<span class = "glyphicon glyphicon-home"></span>
@@ -115,10 +110,10 @@ function content_5732cae6b60c89_32885144 (Smarty_Internal_Template $_smarty_tpl)
 				<div class="panel-body">
 					<div class = "row">
 						<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<label id = "user-email"></label>
+							<label id = "user-email" class = "label label-primary"></label>
 						</div>
 						<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<label id = "user-id"></label>
+							<label id = "user-id" class = "label label-default"></label>
 						</div>
 					</div>
 				</div>
